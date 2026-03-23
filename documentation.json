@@ -20,13 +20,18 @@
             "pages": [
               {
                 "title": "Introduction",
-                "path": "introduction",
+                "path": "introduction-main",
                 "icon": "home"
               },
               {
                 "title": "Quickstart",
                 "path": "quickstart",
                 "icon": "zap"
+              },
+              {
+                "title": "Requirements",
+                "path": "requirements",
+                "icon": "check-square"
               },
               {
                 "title": "Components",
