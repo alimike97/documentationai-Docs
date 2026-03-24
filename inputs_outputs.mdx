@@ -24,7 +24,7 @@ cd ./examples/sod_shock_tube
 python -O ./examples/sod_shock_tube ./examples/sod_shock_tube/input_file.inp
 ```
 
-### **2.&#x20;**&#x49;nput File Structure
+### 2. Input File Structure
 
 The `.inp` file contains all parameters required to run a simulation. It is organized into logical sections.
 
@@ -52,8 +52,8 @@ This section provides a complete reference for all parameters available in the R
 
 | Parameter     | Type  | Description             | Allowed Values           |
 | ------------- | ----- | ----------------------- | ------------------------ |
-| `dt`          | float | Physical time step      | >0                       |
-| `num_steps`   | int   | Number of time steps    | >0                       |
+| `dt`          | float | Physical time step      | >0 (ex: 1e-6)            |
+| `num_steps`   | int   | Number of time steps    | >0 (ex: 3000)            |
 | `time_scheme` | str   | Time integration scheme | FDF, SSPRK2, SSPRK3, BDF |
 
 - FDF: Forward Difference Euler - Explicit
@@ -168,7 +168,7 @@ Available variables to plot:
 
 | Parameter       | Type | Description           | Allowed Values |
 | --------------- | ---- | --------------------- | -------------- |
-| `save_interval` | int  | Results save interval | >0             |
+| `save_interval` | int  | Results save interval | >0 (ex:10)     |
 
 ***Profiling***
 
