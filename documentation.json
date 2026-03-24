@@ -46,6 +46,16 @@
             ]
           },
           {
+            "group": "Methodology",
+            "pages": [
+              {
+                "title": "Reduced Order Modeling (ROM)",
+                "path": "reduced-order-modeling-rom"
+              }
+            ],
+            "icon": "computer"
+          },
+          {
             "group": "Components",
             "icon": "layers",
             "pages": [
