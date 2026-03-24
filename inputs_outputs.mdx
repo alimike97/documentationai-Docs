@@ -223,5 +223,41 @@ Available variables to plot:
   Further details about any of these properties can be found in page Methodology under Reduced Order Modeling tab.
 </Card>
 
-# Inputs
+# Outputs
+
+### **1. Field Data**
+
+Unsteady field data represents the time evolution of an unsteady field at the time step iteration interval specified by `save_interval` in input file. Each field data is written in a NumPy binary file containing a single NumPy array with two dimensions. The first dimension is the number of variables, the second is the number of cells in the computational mesh.&#x20;
+
+Primitive variable indices are as following:
+
+| Index | Variable                                | Unit     |
+| ----- | --------------------------------------- | -------- |
+| 0     | density                                 | \[kg/m3] |
+| 1     | velocity                                | \[m/s]   |
+| 2     | pressure                                | \[Pa]    |
+| 3     | temperature                             | \[K]     |
+| 4:    | mass fractions (only in reacting flows) | \[-]     |
+| -1    | heat release rate                       | \[W/m3]  |
+
+Conservative variable indices are as following:
+
+| Index | Variable     | Unit          |
+| ----- | ------------ | ------------- |
+| 0     | mass         | \[kg/m3]      |
+| 1     | momentum     | \[kg\*m/s/m3] |
+| 2     | total energy | \[J/m3]       |
+| 3:    | species mass | \[kg/m3]      |
+
+### **2. Visualization**
+
+During simulation runtime, plotted visuals will be saved under `working_dir/plots` if `save_visual=True` in input file.
+
+<Callout kind="tip" collapsed="false">
+  This visualization serves only as a basic tool to inspect results during the initial stages. It is recommended that users implement their own customized post-processing scripts to visualize results according to their specific requirements.
+</Callout>
+
+<Callout kind="info" collapsed="false">
+  When ROMify is run on Linux, interactive plots cannot be displayed during the simulation due to Linux environment limitations. They can only be accessed after the visualizations are saved (i.e., `save_visual=True`).
+</Callout>
 
