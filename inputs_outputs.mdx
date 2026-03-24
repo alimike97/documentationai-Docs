@@ -1,0 +1,89 @@
+---
+title: 'Inputs, Configuration & Outputs'
+description: >-
+  ROMify simulations are configured through input files and produce solution
+  data stored in a specified working directory. This section describes the
+  required inputs, their structure, and the generated outputs.
+---
+# Inputs
+
+### **1. Command-Line Arguments**
+
+ROMify requires two inputs when executed from the command line:
+
+- Working directory\
+  Directory where all simulation outputs will be stored. It is recommended to use the test case folder.
+
+- Input file (`.inp`)\
+  A configuration file that defines the simulation setup, including physical parameters, numerical settings, and ROM options.
+
+Example of Sod Shock Tube:&#x20;
+
+```bash
+python -O ./examples/sod_shock_tube ./examples/sod_shock_tube/input_file.inp
+```
+
+### **2.&#x20;**&#x49;nput File Structure
+
+The `.inp` file contains all parameters required to run a simulation. It is organized into logical sections.
+
+The input file is organized into logical sections, each controlling a specific part of the simulation.
+
+This section provides a complete reference for all parameters available in the ROMify input file. Parameters are grouped by section and include type, allowed values, and descriptions.
+
+***Solver***
+
+| Parameter    | Type | Description | Allowed Values           |
+| ------------ | ---- | ----------- | ------------------------ |
+| solver\_mode | str  | Main solver | - FOM (full order model) |
+
+- PROM (projected ROM)
+
+- AROM (adaptive ROM)
+
+- QROM (quadratic ROM)
+
+- NLROM (non-linear ROM) |
+
+***Time Integration***
+
+| Parameter    | Type | Description             | Allowed Values                                                                                                                                                                                      |
+| ------------ | ---- | ----------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| time\_scheme | str  | Time integration scheme | - FDF (Forward Difference Euler – Explicit)
+
+- SSPRK2 (Strong Stability Preserv. RK2 – Explicit)
+
+- SSPRK3 (Strong Stability Preserv. RK3 – Explicit)
+
+- BDF (Backward Difference Euler – Implicit) |
+
+<Callout kind="info" collapsed="false">
+  *The BDF method uses finite differences to compute the Jacobian in reacting flow cases, which might make it very stiff and hard to converge if the time step is too large.*
+</Callout>
+
+***Space Discretization***
+
+| Parameter    | Type  | Description                           | Allowed Values |
+| ------------ | ----- | ------------------------------------- | -------------- |
+| x\_initial   | float | Start of Domain                       | >0             |
+| x\_final     | float | End of Domain                         | >x\_initial    |
+| cell\_number | int   | Number of uniform computational cells | >0             |
+
+***Boundary Conditions***
+
+| Parameter  | Type      | Description           | Allowed Values   |
+| ---------- | --------- | --------------------- | ---------------- |
+| rho\_inlet | float/str | Density left boundary | - constant float |
+
+- extrapolate
+
+- periodic |
+  \| vel\_inlet        | float/str | Velocity left boundary      | >x\_initial                                 |
+  \| press\_inlet      | float/str | Pressure left boundary      | >0                                          |
+  \| temp\_inlet       | float/str | Temperature left boundary   |                                             |
+  \| mass\_frac\_inlet | float/str | Mass fraction left boundary |                                             |
+
+<Callout kind="tip" collapsed="false">
+  The easiest way to create a new case is to copy an existing `.inp` file and modify only the necessary parameters.
+</Callout>
+

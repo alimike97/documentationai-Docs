@@ -34,6 +34,11 @@
                 "icon": "check-square"
               },
               {
+                "title": "Inputs & Outputs",
+                "path": "inputs_outputs",
+                "icon": "file-input"
+              },
+              {
                 "title": "Components",
                 "path": "components",
                 "icon": "code"

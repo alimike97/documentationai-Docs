@@ -1,6 +1,8 @@
 ---
 title: Quickstart
-description: '  This guide walks you through running your first ROMify simulation (sod shock tube) in just a few minutes.'
+description: >-
+  This guide walks you through running your first ROMify simulation (sod shock
+  tube) in just a few minutes.
 ---
 <Steps>
   <Step title="Prerequisites" icon="edit" title-type="p">
@@ -11,7 +13,7 @@ description: '  This guide walks you through running your first ROMify simulatio
     All required libraries are listed in `requirements.txt` located in the `misc_tools/` directory. They can be installed using `pip`.
 
     ```bash
-    pip install -r utils/requirements.txt
+    pip install -r misc_tools/requirements.txt
     ```
   </Step>
 
@@ -24,7 +26,7 @@ description: '  This guide walks you through running your first ROMify simulatio
   </Step>
 
   <Step title="Results" title-type="p">
-    ROMify saves each solution as a separate NumPy `.npy` file in the working directory. Depending on the solver mode, ROMify creates a results folder named after the mode; for the default FOM mode, the folder name is `FOM_results`.
+    ROMify saves each solution as a separate NumPy `.npy` file in the working directory. Depending on the solver mode, ROMify creates a results folder named after the mode; for the default full-order-model FOM mode, the folder name is `FOM_results`.
 
     For each snapshot, ROMify writes two solution files: one labeled `cons` and one labeled `prim`. The `cons` files contain conservative variables such as mass, momentum, total energy, and species mass fractions, while the `prim` files contain primitive variables such as density, velocity, pressure, and temperature.
   </Step>
