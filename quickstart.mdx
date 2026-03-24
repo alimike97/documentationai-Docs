@@ -6,7 +6,7 @@ description: >-
 ---
 <Steps>
   <Step title="Prerequisites" icon="edit" title-type="p">
-    ROMify can be run on both Windows and Linux. For Linux, using Anaconda is recommended. Python 3.9 or newer is required.
+    ROMify can be run on both Windows and Linux. For Linux, using Anaconda is recommended. Python 3.9 or newer is required. Also, pip is needed for installing dependencies.
   </Step>
 
   <Step title="Install Dependencies" icon="monitor" title-type="p">
@@ -17,15 +17,16 @@ description: >-
     ```
   </Step>
 
-  <Step title="Run Your First Simulation" title-type="p">
+  <Step title="Run Your First Simulation" icon="lucide-play" title-type="p">
     Navigate to the root ROMify directory. ROMify requires two inputs: (1) the working directory where results will be saved (it is recommended to use the test case folder), and (2) the input `.inp` file. The following command runs a 1D shock tube simulation.
 
     ```bash
+    cd ./examples/sod_shock_tube
     python -O ./examples/sod_shock_tube ./examples/sod_shock_tube/input_file.inp
     ```
   </Step>
 
-  <Step title="Results" title-type="p">
+  <Step title="Results" icon="lucide-presentation" title-type="p">
     ROMify saves each solution as a separate NumPy `.npy` file in the working directory. Depending on the solver mode, ROMify creates a results folder named after the mode; for the default full-order-model FOM mode, the folder name is `FOM_results`.
 
     For each snapshot, ROMify writes two solution files: one labeled `cons` and one labeled `prim`. The `cons` files contain conservative variables such as mass, momentum, total energy, and species mass fractions, while the `prim` files contain primitive variables such as density, velocity, pressure, and temperature.

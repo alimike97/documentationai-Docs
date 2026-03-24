@@ -54,6 +54,16 @@
                 "icon": "diff"
               },
               {
+                "title": "Time Integration",
+                "path": "time-integration",
+                "icon": "timer-reset-icon"
+              },
+              {
+                "title": "Fluxes / Reconstruction",
+                "path": "fluxes-/-reconstruction",
+                "icon": "frame"
+              },
+              {
                 "title": "Reduced Order Modeling (ROM)",
                 "path": "reduced-order-modeling-rom",
                 "icon": "equal-approximately"
