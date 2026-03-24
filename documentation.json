@@ -49,8 +49,14 @@
             "group": "Methodology",
             "pages": [
               {
+                "title": "Governing Equations",
+                "path": "governing-equations",
+                "icon": "diff"
+              },
+              {
                 "title": "Reduced Order Modeling (ROM)",
-                "path": "reduced-order-modeling-rom"
+                "path": "reduced-order-modeling-rom",
+                "icon": "equal-approximately"
               }
             ],
             "icon": "computer"
