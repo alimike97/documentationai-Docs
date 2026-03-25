@@ -10,7 +10,7 @@ description: >-
   </Step>
 
   <Step title="Install Dependencies" icon="monitor" title-type="p">
-    All required libraries are listed in `requirements.txt` located in the `misc_tools/` directory. They can be installed using `pip`.
+    All required libraries are listed in `requirements.txt` located in the `misc_tools` directory. They can be installed using `pip`.
 
     ```bash
     pip install -r misc_tools/requirements.txt
@@ -21,7 +21,6 @@ description: >-
     Navigate to the root ROMify directory. ROMify requires two inputs: (1) the working directory where results will be saved (it is recommended to use the test case folder), and (2) the input `.inp` file. The following command runs a 1D shock tube simulation.
 
     ```bash
-    cd ./examples/sod_shock_tube
     python -O ./examples/sod_shock_tube ./examples/sod_shock_tube/input_file.inp
     ```
   </Step>
